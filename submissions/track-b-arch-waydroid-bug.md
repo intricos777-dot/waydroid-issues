@@ -1,3 +1,11 @@
+# Track B: LXC cgroup readonly errors
+
+**Submitted:** 2026-09-18  
+**URL:** https://github.com/waydroid/waydroid/issues/2265#issuecomment-5734286454  
+**Status:** COMMENTED on existing issue #2265
+
+---
+
 Subject: [waydroid] LXC config mounts cgroup read-only; Android init cgroup creation fails
 
 Description:

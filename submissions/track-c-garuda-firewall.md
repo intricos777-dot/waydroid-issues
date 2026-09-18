@@ -1,3 +1,11 @@
+# Track C: DHCP blocked / IP address UNKNOWN
+
+**Submitted:** 2026-09-18  
+**URL:** https://github.com/waydroid/waydroid/issues/2272#issuecomment-5734289887  
+**Status:** COMMENTED on existing issue #2272
+
+---
+
 Subject: [Garuda] Waydroid IP address UNKNOWN / DHCP blocked by DEVICE-GUARD
 
 Description:

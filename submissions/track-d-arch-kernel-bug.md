@@ -1,3 +1,11 @@
+# Track D: rust_binder ENOSPC kernel regression
+
+**Submitted:** 2026-09-18  
+**URL:** https://github.com/waydroid/waydroid/issues/2422  
+**Status:** OPEN
+
+---
+
 Subject: [linux-zen] Waydroid rust_binder ENOSPC regression with CONFIG_ANDROID_BINDER_IPC_RUST
 
 Description:

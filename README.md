@@ -27,7 +27,7 @@
 - **Impact:** Audio HAL fails to start; affects both VANILLA and GAPPS system types.
 - **Workaround:** Create symlink `android.hardware.audio@2.0-service` → `android.hardware.audio@4.0-impl.so` in vendor.img (caveat: version mismatch may cause functional issues).
 - **Proper fix:** File upstream bug against Waydroid image build.
-- **Status:** OpenCode investigating; workaround in progress.
+- **Status:** ✅ **SUBMITTED** — [waydroid/waydroid#2421](https://github.com/waydroid/waydroid/issues/2421)
 
 ### 2. LXC cgroup readonly errors (Track B)
 - **Severity:** Medium
@@ -35,15 +35,15 @@
 - **Root cause:** LXC config mounts cgroup read-only (`lxc.mount.auto = cgroup:ro sys:ro proc`), preventing Android init from creating per-uid cgroup subtrees.
 - **Impact:** Multiple services fail cgroup creation; task profiles cannot be applied.
 - **Fix attempted:** `cgroup:delegate` failed on LXC 7.0.0 (`Invalid filesystem to automount`); `lxc.cgroup2.delegate = 1` not effective in current setup.
-- **Status:** Config change not applied; needs upstream packaging fix.
+- **Status:** ✅ **COMMENTED** — Added detailed LXC 7.0.0 specifics to [waydroid/waydroid#2265](https://github.com/waydroid/waydroid/issues/2265)
 
 ### 3. DHCP blocked / IP address UNKNOWN (Track C)
 - **Severity:** Low (network still works)
 - **Symptom:** `waydroid status` shows `IP address: UNKNOWN`
 - **Root cause:** nftables `DEVICE-GUARD` chain drops DHCP broadcasts from `waydroid0` before they reach dnsmasq. Lease file `/var/lib/misc/dnsmasq.waydroid0.leases` is 0 bytes.
 - **Impact:** Status reporting only; container already has static IP `192.168.240.2`.
-- **Fix attempted:** Added accept rules for UDP 67/68 on `waydroid0`, but traffic still blocked. Firewalld `trusted` zone assignment did not resolve.
-- **Status:** Needs deeper firewall chain ordering fix or manual lease seeding.
+- **Fix attempted:** Added accept rules for UDP 67/68 on `waydroid0`; worked for my setup but traffic remained blocked elsewhere due to firewall chain ordering. Firewalld `trusted` zone assignment did not resolve.
+- **Status:** ✅ **COMMENTED** — Added DEVICE-GUARD root cause and workaround to [waydroid/waydroid#2272](https://github.com/waydroid/waydroid/issues/2272)
 
 ### 4. rust_binder ENOSPC kernel regression (Track D)
 - **Severity:** Critical
@@ -51,7 +51,7 @@
 - **Root cause:** Kernel `CONFIG_ANDROID_BINDER_IPC_RUST=y` with classic `CONFIG_ANDROID_BINDER_IPC` disabled. Known regression on Arch kernels ≥6.18.
 - **Impact:** Large binder transactions fail; container instability, coredumps in `surfaceflinger` and `vendor.hwcomposer-2-1`.
 - **Workaround:** Downgrade to kernel with classic binder or apply upstream patch `Darksonn/linux 8e28c67`.
-- **Status:** No local runtime fix; requires kernel update or custom build.
+- **Status:** ✅ **SUBMITTED** — [waydroid/waydroid#2422](https://github.com/waydroid/waydroid/issues/2422)
 
 ---
 
@@ -68,19 +68,21 @@
 
 ## Submission Targets
 
-| Track | Target | Draft File |
-|-------|--------|------------|
-| A | https://github.com/waydroid/waydroid/issues/new | `submissions/track-a-waydroid-github.md` |
-| B | https://bugs.archlinux.org | `submissions/track-b-arch-waydroid-bug.md` |
-| C | https://forum.garudalinux.org | `submissions/track-c-garuda-firewall.md` |
-| D | https://bugs.archlinux.org + Waydroid #2157 | `submissions/track-d-arch-kernel-bug.md` |
+| Track | Target | Draft File | Submission |
+|-------|--------|------------|------------|
+| A | https://github.com/waydroid/waydroid/issues/new | `submissions/track-a-waydroid-github.md` | [#2421](https://github.com/waydroid/waydroid/issues/2421) |
+| B | https://bugs.archlinux.org | `submissions/track-b-arch-waydroid-bug.md` | Comment on [#2265](https://github.com/waydroid/waydroid/issues/2265) |
+| C | https://forum.garudalinux.org | `submissions/track-c-garuda-firewall.md` | Comment on [#2272](https://github.com/waydroid/waydroid/issues/2272) |
+| D | https://bugs.archlinux.org + Waydroid #2157 | `submissions/track-d-arch-kernel-bug.md` | [#2422](https://github.com/waydroid/waydroid/issues/2422) |
 
 ---
 
 ## Upstream References
 
-- Waydroid issue #2157: https://github.com/waydroid/waydroid/issues/2157
-- Arch bug #173: https://bugs.archlinux.org/task/173
+- Waydroid issue #2157 (closed — different binder bug): https://github.com/waydroid/waydroid/issues/2157
+- Waydroid issue #2265 (open — cgroup errors): https://github.com/waydroid/waydroid/issues/2265
+- Waydroid issue #2272 (open — DHCP no IPv4): https://github.com/waydroid/waydroid/issues/2272
+- Arch GitLab #173 (closed): https://gitlab.archlinux.org/archlinux/packaging/packages/linux/-/issues/173
 - Darksonn/linux commit: https://github.com/Darksonn/linux/commit/8e28c67dc3f5c6fc77fd1a19f76fdca25f7c9c59
 
 ---
@@ -96,4 +98,4 @@
 
 ---
 
-*Last updated: 2026-09-03*
+*Last updated: 2026-09-18*

@@ -1,3 +1,11 @@
+# Track A: Missing audio HAL in vendor image
+
+**Submitted:** 2026-09-18  
+**URL:** https://github.com/waydroid/waydroid/issues/2421  
+**Status:** OPEN
+
+---
+
 [BUG] Vendor image missing android.hardware.audio@2.0-service on lineage_waydroid_x86_64
 
 Description:
