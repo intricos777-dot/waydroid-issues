@@ -1,0 +1,16 @@
+# Waydroid issues repo
+
+# Script runtime artifacts
+scripts/.auto_config_state
+scripts/*.log
+scripts/__pycache__/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Logs
+*.log
+logs/
