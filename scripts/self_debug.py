@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Watermark: Living_Sin (intricos777-dot) + AI agents (Hermes, Lia, opencode) - collaborative work
 """
 self_debug.py — Self-debugging wrapper for game pipelines
 Wraps any game launch with automatic diagnostics, healing, and logging

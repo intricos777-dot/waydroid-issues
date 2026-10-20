@@ -1,3 +1,4 @@
+<!-- Watermark: Living_Sin (intricos777-dot) + AI agents (Hermes, Lia, opencode) - collaborative work -->
 # Waydroid Missing Audio HAL (vendor.audio-hal-2-0) Investigation
 
 Date: 2026-09-03  

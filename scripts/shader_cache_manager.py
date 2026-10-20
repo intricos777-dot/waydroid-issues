@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Watermark: Living_Sin (intricos777-dot) + AI agents (Hermes, Lia, opencode) - collaborative work
 """
 shader_cache_manager.py — Self-healing, self-debugging shader cache manager
 Auto-configures Proton shader cache based on which game is being launched

@@ -1,3 +1,4 @@
+<!-- Watermark: Living_Sin (intricos777-dot) + AI agents (Hermes, Lia, opencode) - collaborative work -->
 # Kernel Regression Report: Waydroid rust_binder ENOSPC
 
 **Host:** Linux 7.2.2-zen1-1-zen (Garuda Linux, Arch-based)  

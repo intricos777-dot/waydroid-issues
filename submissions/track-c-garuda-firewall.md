@@ -1,3 +1,4 @@
+<!-- Watermark: Living_Sin (intricos777-dot) + AI agents (Hermes, Lia, opencode) - collaborative work -->
 # Track C: DHCP blocked / IP address UNKNOWN
 
 **Submitted:** 2026-09-18  
