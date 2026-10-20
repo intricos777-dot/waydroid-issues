@@ -55,4 +55,4 @@ Upstream fix: **Darksonn/linux commit `8e28c67`** — properly handles large bin
 **No simpler runtime workaround exists at this time.** The practical mitigation is either kernel downgrade or applying the upstream patch.
 
 ---
-*Reported by: /home/sin/waydroid-reports/track-d-kernel-regression.md*
+*Reported by: /home/livings/waydroid-reports/track-d-kernel-regression.md*

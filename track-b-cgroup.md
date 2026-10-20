@@ -103,4 +103,4 @@ waydroid stop && waydroid start
 - ✅ CGroup delegation status confirmed (disabled / read-only).
 - ✅ Root cause identified: `cgroup:ro` mount prevents Android init from creating per-uid cgroups.
 - ❌ Fix **not applied** — config modification deferred pending user confirmation.
-- 📄 Report written to `/home/sin/waydroid-reports/track-b-cgroup.md`.
+- 📄 Report written to `/home/livings/waydroid-reports/track-b-cgroup.md`.

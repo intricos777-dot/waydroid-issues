@@ -34,17 +34,17 @@ declare -A GAME_BINARIES
 declare -A GAME_SHADERS
 declare -A GAME_BUILD_TOOLS
 
-GAME_BUILD_DIRS["2ship2harkinian"]="/home/sin/games/2ship2harkinian/build-cmake"
-GAME_BINARIES["2ship2harkinian"]="/home/sin/games/2ship2harkinian/build-cmake/mm/2s2h.elf"
+GAME_BUILD_DIRS["2ship2harkinian"]="/home/livings/games/2ship2harkinian/build-cmake"
+GAME_BINARIES["2ship2harkinian"]="/home/livings/games/2ship2harkinian/build-cmake/mm/2s2h.elf"
 GAME_SHADERS["2ship2harkinian"]=""
 GAME_BUILD_TOOLS["2ship2harkinian"]="ninja"
 
-GAME_BUILD_DIRS["twilight-elysium"]="/home/sin/games/twilight-elysium/build"
-GAME_BINARIES["twilight-elysium"]="/home/sin/games/twilight-elysium/build/te-test"
-GAME_SHADERS["twilight-elysium"]="/home/sin/games/twilight-elysium/assets/shaders"
+GAME_BUILD_DIRS["twilight-elysium"]="/home/livings/games/twilight-elysium/build"
+GAME_BINARIES["twilight-elysium"]="/home/livings/games/twilight-elysium/build/te-test"
+GAME_SHADERS["twilight-elysium"]="/home/livings/games/twilight-elysium/assets/shaders"
 
-GAME_BUILD_DIRS["loz-majoras-mask"]="/home/sin/games/loz-majoras-mask/build"
-GAME_BINARIES["loz-majoras-mask"]="/home/sin/games/loz-majoras-mask/build/mm"
+GAME_BUILD_DIRS["loz-majoras-mask"]="/home/livings/games/loz-majoras-mask/build"
+GAME_BINARIES["loz-majoras-mask"]="/home/livings/games/loz-majoras-mask/build/mm"
 GAME_SHADERS["loz-majoras-mask"]=""
 
 ALL_GAMES=("2ship2harkinian" "twilight-elysium" "loz-majoras-mask")
@@ -235,13 +235,13 @@ heal_loz_majoras_mask() {
         if [[ -f "$build_dir/CMakeCache.txt" ]] && grep -q "Projects/loz-majoras-mask" "$build_dir/CMakeCache.txt" 2>/dev/null; then
             log_warn "Stale CMake cache detected, regenerating..."
             rm -f "$build_dir/CMakeCache.txt"
-            cmake -S /home/sin/games/loz-majoras-mask -B "$build_dir" 2>&1 | tee -a "$LOG_FILE"
+            cmake -S /home/livings/games/loz-majoras-mask -B "$build_dir" 2>&1 | tee -a "$LOG_FILE"
         fi
         cd "$build_dir"
         cmake --build . -j$(nproc) 2>&1 | tee -a "$LOG_FILE"
     else
         log_warn "Build directory missing, configuring..."
-        cmake -S /home/sin/games/loz-majoras-mask -B "$build_dir" 2>&1 | tee -a "$LOG_FILE"
+        cmake -S /home/livings/games/loz-majoras-mask -B "$build_dir" 2>&1 | tee -a "$LOG_FILE"
         cd "$build_dir"
         cmake --build . -j$(nproc) 2>&1 | tee -a "$LOG_FILE"
     fi

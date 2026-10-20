@@ -2,8 +2,8 @@
 # Waydroid IP Address UNKNOWN – Network Diagnosis
 
 **Date:** 2026-09-03  
-**Workdir:** /home/sin  
-**Report:** /home/sin/waydroid-reports/track-c-network.md
+**Workdir:** /home/livings  
+**Report:** /home/livings/waydroid-reports/track-c-network.md
 
 ## Observed Symptoms
 
